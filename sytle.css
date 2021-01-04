@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.header{
+    background-image:linear-gradient(rgba(70, 204, 153, 0.411), rgba(19, 19, 204, 0.445)), url(../media/shashikant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+.logo{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+}
+.logo img{
+    
+}
+.navbar{
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    background-color: white ;
+    border-radius: 50%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    z-index: 2;
+}
+
+.navbar .hamburger{
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    display: inline-block;
+    position: relative;
+    margin-top: 25px;
+}
+.navbar .hamburger::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    display: inline-block;
+    
+}
+.navbar .hamburger::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    display: inline-block;
+    
+}
+
+.nav-back{
+    background-image: linear-gradient(rgb(70, 204, 153), rgb(19, 19, 204));
+    background-size: cover;
+    height: 100vh;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 1;
+    transition: all 0.5s;
+}
+.item-list{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.nav{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    width: 0;
+    transition: all .6s;
+}
+.nav li{
+    list-style: none;
+    margin: 15px;
+    
+}
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 200;
+    padding: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(90deg, transparent 50%, white 50%);
+    background-size: 250%;
+    transition: all 0.5s ease-out;
+
+}
+
+.nav li a:hover{
+    background-position: 100%;
+    color: black;
+}
+
+input{
+    display: none;
+}
+.check:checked ~ .nav-back{
+    transform: scale(200);
+}
+.check:checked ~ .item-list .nav{
+    opacity: 1;
+    width: 100%;
+    z-index: 3;
+}
+
+.check:checked ~ .navbar .hamburger::before{
+    transform: rotate(45deg);
+    
+    
+
+}    
+.check:checked ~ .navbar .hamburger::after{
+    transform: rotate(135deg);
+    
+    
+}
